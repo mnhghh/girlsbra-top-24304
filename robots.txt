@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://girlsbra.top/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all search engines to access the site
+# Disallow access to admin or private areas (none currently)
+
+# Allow access to CSS and JS files for proper rendering
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Allow access to all blog content
+Allow: /blog/
+
+# Allow access to main pages
+Allow: /calculator.html
+Allow: /about.html
+Allow: /contact.html
+
+# Legal pages are allowed but not prioritized
+Allow: /privacy.html
+Allow: /disclaimer.html
+Allow: /terms.html
+
