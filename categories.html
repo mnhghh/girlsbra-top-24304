@@ -1,0 +1,78 @@
+---
+layout: default
+title: "All Categories"
+---
+
+<style>
+  .category-buttons {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .category-btn {
+    margin: 5px;
+  }
+  .post-card {
+    display: block; /* Initially show all posts */
+  }
+</style>
+
+<section class="hero">
+  <div class="container">
+    <h1>All Categories</h1>
+    <p>Find articles by category. Select a category below to filter the posts.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div id="category-buttons" class="category-buttons"></div>
+
+    <div id="posts-container" class="grid grid-2">
+      {% for post in site.posts %}
+        <article class="card post-card" data-category="{{ post.category | slugify }}">
+          {% if post.image %}
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="card-image">
+          {% endif %}
+          <div class="card-content">
+            <span style="color: var(--primary-color); font-size: 0.9rem; font-weight: 500;">{{ post.category | upcase }}</span>
+            <h3 class="card-title">{{ post.title }}</h3>
+            <p class="card-text">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+            <a href="{{ post.url | relative_url }}" class="btn btn-outline">Read More</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const postsContainer = document.getElementById('posts-container');
+    const categoryButtonsContainer = document.getElementById('category-buttons');
+    const allPosts = document.querySelectorAll('.post-card');
+    
+    // Get all unique categories from posts
+    const categories = new Set();
+    allPosts.forEach(post => {
+      categories.add(post.dataset.category);
+    });
+
+    // Create a button for each category
+    categoryButtonsContainer.innerHTML += '<button class="btn btn-primary category-btn" onclick="filterPosts(\'all\')">All Posts</button>';
+    categories.forEach(category => {
+      const categoryName = category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+      categoryButtonsContainer.innerHTML += `<button class="btn btn-outline category-btn" onclick="filterPosts('${category}')">${categoryName}</button>`;
+    });
+  });
+
+  function filterPosts(category) {
+    const allPosts = document.querySelectorAll('.post-card');
+    allPosts.forEach(post => {
+      if (category === 'all' || post.dataset.category === category) {
+        post.style.display = 'block';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+  }
+</script>
