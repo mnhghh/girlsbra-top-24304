@@ -1,24 +1,40 @@
 ---
 layout: default
-title: "All Articles"
+title: "All Articles - GirlsBra Top Blog"
 ---
+
+<style>
+  .post-card {
+    margin-bottom: 2rem;
+  }
+  .card-title a {
+    color: var(--text-primary);
+  }
+  .card-title a:hover {
+    color: var(--primary-color);
+  }
+</style>
 
 <section class="hero">
   <div class="container">
-    <h1>All Blog Posts</h1>
+    <h1>All Articles & Guides</h1>
     <p>Your ultimate resource for bra fitting, reviews, and advice.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="grid grid-2">
+    <div id="posts-container" class="grid grid-2">
       {% for post in site.posts %}
-        <article class="card">
+        <article class="card post-card">
+          {% if post.image %}
+            <a href="{{ post.url | relative_url }}"><img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="card-image"></a>
+          {% endif %}
           <div class="card-content">
-            <h3 class="card-title">
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            </h3>
+            {% if post.category %}
+              <span style="color: var(--primary-color); font-size: 0.9rem; font-weight: 500;">{{ post.category | upcase }}</span>
+            {% endif %}
+            <h3 class="card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
             <p class="card-text">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
             <a href="{{ post.url | relative_url }}" class="btn btn-outline">Read More</a>
           </div>
