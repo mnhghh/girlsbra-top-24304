@@ -1,12 +1,5 @@
 {
-  "name": "girlsbra-top",
-  "version": "1.0.0",
-  "description": "A Jekyll-powered blog.",
-  "main": "index.js",
   "scripts": {
-    "dev": "bundle exec jekyll serve",
-    "build": "bundle exec jekyll build"
-  },
-  "author": "",
-  "license": "ISC"
+    "build": "bundle install && bundle exec jekyll build"
+  }
 }
