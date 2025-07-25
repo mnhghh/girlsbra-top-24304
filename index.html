@@ -1,84 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta name="google-site-verification" content="Xza28GhTqMCdB_y-Ea7H32YfSuECAHKh6_n11UD8nCk" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GirlsBra Top - Find Your Perfect Bra Fit | Bra Size Calculator & Reviews</title>
-    <meta name="description" content="Discover your perfect bra fit with our free bra size calculator. Expert reviews, size guides, and recommendations for the best bras for every woman. Find your ideal bra today!">
-    <meta name="keywords" content="bra size calculator, best bras 2025, bra reviews, perfect bra fit, women's bras, bra size guide">
-    <meta name="author" content="GirlsBra Top">
-    
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header class="header">
-        <nav class="navbar container">
-            <div class="logo">
-                <a href="index.html">GirlsBra Top</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="calculator.html" class="nav-link">Bra Size Calculator</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-        </nav>
-    </header>
+---
+layout: default
+title: "GirlsBra Top - Find Your Perfect Bra Fit | Bra Size Calculator & Reviews"
+---
 
-    <section class="hero">
-        <div class="container">
-            <h1>Find Your Perfect Bra Fit</h1>
-            <p>Empowering every woman to discover comfort, confidence, and the perfect fit with our expert guides and free bra size calculator.</p>
-            <a href="calculator.html" class="btn btn-primary">Try Our Free Calculator</a>
+<header class="header">
+    <nav class="navbar container">
+        <div class="logo">
+            <a href="/">GirlsBra Top</a>
         </div>
-    </section>
+        <ul class="nav-menu">
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/calculator.html" class="nav-link">Bra Size Calculator</a></li>
+            <li><a href="/blog.html" class="nav-link">Blog</a></li>
+            <li><a href="/about.html" class="nav-link">About</a></li>
+            <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <section class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Featured Bras - Editor's Choice</h2>
-            <div class="grid grid-3">
-                <div class="product-box">
-                    <img src="images/bra-1.jpg" alt="Best wireless bra for comfort" class="product-image">
-                    <h3>ComfortFlex Wireless Bra</h3>
-                    <a href="https://amazon.com/placeholder-link" class="btn btn-primary" target="_blank" rel="nofollow">Check Price on Amazon</a>
-                </div>
-                <div class="product-box">
-                    <img src="images/bra-2.jpg" alt="Best sports bra for high impact" class="product-image">
-                    <h3>ActiveFit Sports Bra</h3>
-                    <a href="https://amazon.com/placeholder-link" class="btn btn-primary" target="_blank" rel="nofollow">Check Price on Amazon</a>
-                </div>
-                <div class="product-box">
-                    <img src="images/bra-3.jpg" alt="Best push-up bra for small chest" class="product-image">
-                    <h3>LiftMax Push-Up Bra</h3>
-                    <a href="https://amazon.com/placeholder-link" class="btn btn-primary" target="_blank" rel="nofollow">Check Price on Amazon</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+    <div class="container">
+        <h1>Find Your Perfect Bra Fit</h1>
+        <p>Empowering every woman to discover comfort, confidence, and the perfect fit with our expert guides and free bra size calculator.</p>
+        <a href="/calculator.html" class="btn btn-primary">Try Our Free Calculator</a>
+    </div>
+</section>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Latest Articles & Guides</h2>
-            <div id="latest-posts-container" class="grid grid-3">
-                </div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="blog.html" class="btn btn-secondary">View All Articles</a>
-            </div>
+<section class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Featured Bras - Editor's Choice</h2>
+        <div class="grid grid-3">
+             </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Latest Articles & Guides</h2>
+        <div class="grid grid-3">
+          {% for post in site.posts limit:3 %}
+            <article class="card">
+              {% if post.image %}
+                <a href="{{ post.url | relative_url }}"><img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="card-image"></a>
+              {% endif %}
+              <div class="card-content">
+                <h3 class="card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                <p class="card-text">{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
+                <a href="{{ post.url | relative_url }}" class="btn btn-outline">Read More</a>
+              </div>
+            </article>
+          {% endfor %}
         </div>
-    </section>
-    
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 GirlsBra Top. All rights reserved.</p>
-            </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="/blog.html" class="btn btn-secondary">View All Articles</a>
         </div>
-    </footer>
-    <script src="js/script.js"></script>
-</body>
-</html>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="container">
+        </div>
+</footer>
+
+<script src="/js/script.js"></script>
