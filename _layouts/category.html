@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="container">
+    <h1>Category: {{ page.category | capitalize }}</h1>
+    <p>All articles filed under the "{{ page.category | capitalize }}" category.</p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="grid grid-2">
+      {% for post in site.categories[page.category] %}
+        <article class="card">
+          {% if post.image %}
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="card-image">
+          {% endif %}
+          <div class="card-content">
+            <h3 class="card-title">{{ post.title }}</h3>
+            <div style="margin-bottom: 1rem; color: var(--text-light); font-size: 0.9rem;">
+              <span>{{ post.date | date: "%B %d, %Y" }}</span>
+            </div>
+            <a href="{{ post.url | relative_url }}" class="btn btn-outline">Read Full Guide</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

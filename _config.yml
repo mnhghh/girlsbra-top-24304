@@ -1,0 +1,5 @@
+# Collections for category pages
+collections:
+  categories:
+    output: true
+    permalink: /categories/:name/
