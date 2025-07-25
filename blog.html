@@ -1,112 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bra Guides & Reviews Blog - GirlsBra Top | Expert Bra Fitting Advice</title>
-    <meta name="description" content="Expert bra guides, reviews, and fitting advice. Find the best bras for your needs with our comprehensive blog covering size guides, product reviews, and fitting tips.">
-    <meta name="keywords" content="bra blog, bra reviews, bra size guide, best bras 2025, bra fitting tips, women's lingerie guides">
-    <meta name="author" content="GirlsBra Top">
-    
-    <link rel="canonical" href="https://girlsbra.top/blog.html">
-    
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header class="header">
-        <nav class="navbar container">
-            <div class="logo">
-                <a href="index.html">GirlsBra Top</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="calculator.html" class="nav-link">Bra Size Calculator</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-        </nav>
-    </header>
+---
+layout: default
+title: "All Articles - GirlsBra Top Blog"
+---
+<style>
+  .post-card {
+    margin-bottom: 2rem;
+  }
+</style>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Bra Guides & Reviews</h1>
-            <p>Expert advice, honest reviews, and comprehensive guides to help you find your perfect bra</p>
-        </div>
-    </section>
+<section class="hero">
+  <div class="container">
+    <h1>All Articles & Guides</h1>
+    <p>Your ultimate resource for bra fitting, reviews, and advice.</p>
+  </div>
+</section>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Browse by Category</h2>
-            <div class="grid grid-3">
-                <div class="card">
-                    <div class="card-content text-center">
-                        <h3>Bra Size Guide</h3>
-                        <p>Complete guides to finding your perfect size and understanding bra measurements.</p>
-                        <a href="categories.html" class="btn btn-primary">Explore Guides</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content text-center">
-                        <h3>Best Bras by Use</h3>
-                        <p>Discover the best bras for sports, work, sleep, and special occasions.</p>
-                        <a href="categories.html" class="btn btn-primary">Find Your Bra</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content text-center">
-                        <h3>Bra Reviews</h3>
-                        <p>Honest, detailed reviews of popular bra brands and models.</p>
-                        <a href="categories.html" class="btn btn-primary">Read Reviews</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content text-center">
-                        <h3>Bra vs Bralette</h3>
-                        <p>Learn the differences and find out which option is best for you.</p>
-                        <a href="categories.html" class="btn btn-primary">Compare Options</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content text-center">
-                        <h3>Teen & First Bras</h3>
-                        <p>Guidance for teens and first-time bra buyers with comfort and confidence.</p>
-                        <a href="categories.html" class="btn btn-primary">Get Started</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content text-center">
-                        <h3>Maternity Bras</h3>
-                        <p>Support and comfort for expecting and nursing mothers.</p>
-                        <a href="categories.html" class="btn btn-primary">Shop Maternity</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Latest Articles</h2>
-            <div class="grid grid-2">
-                <article class="card">
-                    <img src="images/blog-1.jpg" alt="Best bras for small chest 2025" class="card-image">
-                    <div class="card-content">
-                        <span style="color: var(--primary-color); font-size: 0.9rem; font-weight: 500;">BRA REVIEWS</span>
-                        <h3 class="card-title">Best Bras for Small Chest 2025: Complete Guide</h3>
-                        <p class="card-text">Discover the perfect bras that enhance and support smaller busts. Our expert review covers push-up, wireless, and everyday options with detailed pros and cons.</p>
-                        <div style="margin-bottom: 1rem; color: var(--text-light); font-size: 0.9rem;">
-                            <span>January 15, 2025</span> • <span>8 min read</span>
-                        </div>
-                        <a href="blog/best-bras-small-chest-2025.html" class="btn btn-outline">Read Full Review</a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="images/blog-2.jpg" alt="Wireless nursing bra review" class="card-image">
+<section class="section">
+  <div class="container">
+    <div id="posts-container" class="grid grid-2">
+      {% for post in site.posts %}
+        <article class="card post-card">
+          {% if post.image %}
+            <a href="{{ post.url | relative_url }}"><img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="card-image"></a>
+          {% endif %}
+          <div class="card-content">
+            <span style="color: var(--primary-color); font-size: 0.9rem; font-weight: 500;">{{ post.category | upcase }}</span>
+            <h3 class="card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p class="card-text">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+            <a href="{{ post.url | relative_url }}" class="btn btn-outline">Read More</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
