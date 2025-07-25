@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Bra Size Calculator - Find Your Perfect Fit | GirlsBra Top</title>
+    <meta name="description" content="Calculate your perfect bra size with our free, accurate bra size calculator. Works with inches and centimeters. Get your band and cup size instantly!">
+    <meta name="keywords" content="bra size calculator, calculate bra size, bra fitting, band size, cup size, bra measurement">
+    <meta name="author" content="GirlsBra Top">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free Bra Size Calculator - Find Your Perfect Fit">
+    <meta property="og:description" content="Calculate your perfect bra size with our free, accurate calculator. Works with inches and centimeters.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://girlsbra.top/calculator.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://girlsbra.top/calculator.html">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Bra Size Calculator",
+        "description": "Free bra size calculator to find your perfect fit",
+        "url": "https://girlsbra.top/calculator.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo">
+                <a href="index.html">GirlsBra Top</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="calculator.html" class="nav-link">Bra Size Calculator</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Free Bra Size Calculator</h1>
+            <p>Find your perfect bra size in seconds with our accurate calculator. Works with both inches and centimeters!</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="section">
+        <div class="container">
+            <div class="calculator">
+                <h2 class="text-center mb-3">Calculate Your Bra Size</h2>
+                
+                <!-- Measurement Instructions -->
+                <div class="card mb-4">
+                    <div class="card-content">
+                        <h3>How to Measure Correctly</h3>
+                        <div class="grid grid-2">
+                            <div>
+                                <h4>Band Measurement</h4>
+                                <p>Measure around your ribcage, just under your bust. Keep the tape measure level and snug but not tight. Exhale and take the measurement.</p>
+                            </div>
+                            <div>
+                                <h4>Bust Measurement</h4>
+                                <p>Measure around the fullest part of your bust. Keep the tape measure level and parallel to the floor. Don't pull too tight.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calculator Form -->
+                <form id="calculatorForm" onsubmit="event.preventDefault(); calculateBraSize();">
+                    <div class="form-group">
+                        <label for="unit" class="form-label">Measurement Unit</label>
+                        <select id="unit" class="form-select">
+                            <option value="inches">Inches</option>
+                            <option value="cm">Centimeters</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bandSize" class="form-label">Band Measurement (under bust)</label>
+                        <input type="number" id="bandSize" class="form-input" placeholder="Enter your band measurement" step="0.1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bustSize" class="form-label">Bust Measurement (fullest part)</label>
+                        <input type="number" id="bustSize" class="form-input" placeholder="Enter your bust measurement" step="0.1" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Calculate My Bra Size</button>
+                </form>
+
+                <!-- Result Box -->
+                <div id="resultBox" class="result-box" style="display: none;">
+                    <h3>Your Calculated Bra Size</h3>
+                    <div id="resultSize" class="result-size">--</div>
+                    <p id="resultText">Your calculated bra size will appear here.</p>
+                    <div class="mt-3">
+                        <a href="#recommended-bras" class="btn btn-secondary">See Recommended Bras</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Understanding Bra Sizes</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Band Size Guide</h3>
+                        <p>The band provides 80% of your bra's support. It should be snug but comfortable, sitting parallel to the floor.</p>
+                        <ul style="margin-top: 1rem;">
+                            <li><strong>32:</strong> 28-29 inches under bust</li>
+                            <li><strong>34:</strong> 30-31 inches under bust</li>
+                            <li><strong>36:</strong> 32-33 inches under bust</li>
+                            <li><strong>38:</strong> 34-35 inches under bust</li>
+                            <li><strong>40:</strong> 36-37 inches under bust</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Cup Size Guide</h3>
+                        <p>Cup size is determined by the difference between your bust and band measurements.</p>
+                        <ul style="margin-top: 1rem;">
+                            <li><strong>A:</strong> 1 inch difference</li>
+                            <li><strong>B:</strong> 2 inch difference</li>
+                            <li><strong>C:</strong> 3 inch difference</li>
+                            <li><strong>D:</strong> 4 inch difference</li>
+                            <li><strong>DD:</strong> 5 inch difference</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommended Bras Section -->
+    <section id="recommended-bras" class="section">
+        <div class="container">
+            <h2 class="section-title">Recommended Bras for Your Size</h2>
+            <div class="grid grid-3">
+                <!-- Product 1 -->
+                <div class="product-box">
+                    <div class="product-header">
+                        <img src="images/bra-everyday.jpg" alt="Best everyday bra for comfort" class="product-image">
+                        <div class="product-info">
+                            <h3>Everyday Comfort Bra</h3>
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span>(4.9/5)</span>
+                            </div>
+                            <div class="price">$24.99</div>
+                        </div>
+                    </div>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Perfect For</h4>
+                            <ul>
+                                <li>Daily wear and comfort</li>
+                                <li>All-day support</li>
+                                <li>Seamless under clothes</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Consider</h4>
+                            <ul>
+                                <li>May not suit all outfits</li>
+                                <li>Limited color options</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://amazon.com/placeholder-everyday-bra" class="btn btn-primary" target="_blank" rel="nofollow">Check Price on Amazon</a>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-box">
+                    <div class="product-header">
+                        <img src="images/bra-wireless.jpg" alt="Best wireless bra for comfort" class="product-image">
+                        <div class="product-info">
+                            <h3>Wireless Comfort Bra</h3>
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span>(4.7/5)</span>
+                            </div>
+                            <div class="price">$32.99</div>
+                        </div>
+                    </div>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Perfect For</h4>
+                            <ul>
+                                <li>Wire-free comfort</li>
+                                <li>Sensitive skin</li>
+                                <li>Lounging and sleep</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Consider</h4>
+                            <ul>
+                                <li>Less lift than underwire</li>
+                                <li>May not suit larger sizes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://amazon.com/placeholder-wireless-bra" class="btn btn-primary" target="_blank" rel="nofollow">Check Price on Amazon</a>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-box">
+                    <div class="product-header">
+                        <img src="images/bra-support.jpg" alt="Best support bra for larger sizes" class="product-image">
+                        <div class="product-info">
+                            <h3>Maximum Support Bra</h3>
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span>(4.8/5)</span>
+                            </div>
+                            <div class="price">$42.99</div>
+                        </div>
+                    </div>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Perfect For</h4>
+                            <ul>
+                                <li>Maximum support</li>
+                                <li>Larger cup sizes</li>
+                                <li>Active lifestyle</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Consider</h4>
+                            <ul>
+                                <li>May feel restrictive initially</li>
+                                <li>Higher price point</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://amazon.com/placeholder-support-bra" class="btn btn-primary" target="_blank" rel="nofollow">Check Price on Amazon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Bra Fitting Tips</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Signs of a Good Fit</h3>
+                        <ul>
+                            <li>Band sits level around your body</li>
+                            <li>Cups contain all breast tissue</li>
+                            <li>Straps don't dig into shoulders</li>
+                            <li>Center gore lies flat against chest</li>
+                            <li>No spillage or gaps</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3>When to Get Remeasured</h3>
+                        <ul>
+                            <li>Weight change of 10+ pounds</li>
+                            <li>Pregnancy or breastfeeding</li>
+                            <li>Hormonal changes</li>
+                            <li>Every 6-12 months</li>
+                            <li>When bras feel uncomfortable</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="container">
+            <div class="card" style="background: linear-gradient(135deg, #673ab7 0%, #e91e63 100%); color: white; text-align: center; padding: 3rem;">
+                <h2>Ready to Find Your Perfect Bra?</h2>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem;">Browse our curated selection of top-rated bras in your size!</p>
+                <a href="blog.html" class="btn btn-secondary">Explore Our Reviews</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GirlsBra Top</h3>
+                    <p>Empowering every woman to find her perfect fit. Your trusted source for bra guides, reviews, and expert advice.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="calculator.html">Bra Size Calculator</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="blog/category/bra-size-guide.html">Bra Size Guide</a></li>
+                        <li><a href="blog/category/best-bras-by-use.html">Best Bras by Use</a></li>
+                        <li><a href="blog/category/bra-reviews.html">Bra Reviews</a></li>
+                        <li><a href="blog/category/maternity-bras.html">Maternity Bras</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="disclaimer.html">Affiliate Disclaimer</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 GirlsBra Top. All rights reserved. | Empowering Every Woman to Find Her Perfect Fit.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    
+    <!-- Enhanced Calculator JavaScript -->
+    <script>
+        function calculateBraSize() {
+            const bandSize = parseFloat(document.getElementById('bandSize').value);
+            const bustSize = parseFloat(document.getElementById('bustSize').value);
+            const unit = document.getElementById('unit').value;
+            
+            if (!bandSize || !bustSize) {
+                alert('Please enter both measurements');
+                return;
+            }
+            
+            if (bustSize <= bandSize) {
+                alert('Bust measurement should be larger than band measurement');
+                return;
+            }
+            
+            // Convert to inches if needed
+            let bandInches = unit === 'cm' ? bandSize / 2.54 : bandSize;
+            let bustInches = unit === 'cm' ? bustSize / 2.54 : bustSize;
+            
+            // Calculate band size (round to nearest even number)
+            let calculatedBand = Math.round(bandInches);
+            if (calculatedBand % 2 !== 0) {
+                calculatedBand += 1;
+            }
+            
+            // Add 4 inches if band measurement is less than 33 inches
+            if (bandInches < 33) {
+                calculatedBand += 4;
+            }
+            
+            // Calculate cup size
+            const difference = bustInches - calculatedBand;
+            const cupSizes = ['AA', 'A', 'B', 'C', 'D', 'DD', 'DDD', 'F', 'G', 'H', 'I', 'J', 'K'];
+            let cupIndex = Math.round(difference);
+            
+            if (cupIndex < 0) cupIndex = 0;
+            if (cupIndex >= cupSizes.length) cupIndex = cupSizes.length - 1;
+            
+            const cupSize = cupSizes[cupIndex];
+            const finalSize = `${calculatedBand}${cupSize}`;
+            
+            // Display result
+            document.getElementById('resultSize').textContent = finalSize;
+            document.getElementById('resultBox').style.display = 'block';
+            
+            // Add helpful text based on size
+            const resultText = document.getElementById('resultText');
+            let helpText = `Your calculated bra size is ${finalSize}. `;
+            
+            if (cupIndex <= 2) {
+                helpText += "Consider trying push-up or padded bras for enhanced shape and confidence.";
+            } else if (cupIndex >= 5) {
+                helpText += "Look for bras with excellent support and wider straps for comfort.";
+            } else {
+                helpText += "You have many bra style options! Try different types to find your preference.";
+            }
+            
+            helpText += " Remember, sizes can vary between brands, so always try before buying when possible!";
+            resultText.textContent = helpText;
+            
+            // Scroll to result
+            document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Update placeholder text based on unit selection
+        document.getElementById('unit').addEventListener('change', function() {
+            const unit = this.value;
+            const bandInput = document.getElementById('bandSize');
+            const bustInput = document.getElementById('bustSize');
+            
+            if (unit === 'cm') {
+                bandInput.placeholder = 'e.g., 75 cm';
+                bustInput.placeholder = 'e.g., 90 cm';
+            } else {
+                bandInput.placeholder = 'e.g., 30 inches';
+                bustInput.placeholder = 'e.g., 35 inches';
+            }
+        });
+    </script>
+</body>
+</html>
+

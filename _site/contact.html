@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - GirlsBra Top | Get in Touch for Bra Fitting Help</title>
+    <meta name="description" content="Contact GirlsBra Top for bra fitting questions, product recommendations, or general inquiries. We're here to help you find your perfect fit!">
+    <meta name="keywords" content="contact girlsbra top, bra fitting help, customer support, bra questions">
+    <meta name="author" content="GirlsBra Top">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://girlsbra.top/contact.html">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo">
+                <a href="index.html">GirlsBra Top</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="calculator.html" class="nav-link">Bra Size Calculator</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We're here to help you find your perfect fit. Get in touch with any questions!</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col col-8">
+                    <h2>Get in Touch</h2>
+                    <p>Have a question about bra fitting, need a product recommendation, or want to share your experience? We'd love to hear from you! Our team is dedicated to helping every woman find her perfect fit.</p>
+
+                    <!-- Contact Form -->
+                    <form id="contactForm" class="card" onsubmit="submitContactForm(event)">
+                        <div class="card-content">
+                            <h3>Send Us a Message</h3>
+                            
+                            <div class="form-group">
+                                <label for="name" class="form-label">Your Name *</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <select id="subject" name="subject" class="form-select" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="bra-fitting">Bra Fitting Question</option>
+                                    <option value="product-recommendation">Product Recommendation</option>
+                                    <option value="size-calculator">Size Calculator Issue</option>
+                                    <option value="review-request">Review Request</option>
+                                    <option value="partnership">Partnership Inquiry</option>
+                                    <option value="feedback">Website Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Your Message *</label>
+                                <textarea id="message" name="message" class="form-input" rows="6" placeholder="Tell us how we can help you..." required style="resize: vertical; min-height: 120px;"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="col col-4">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Quick Help</h3>
+                            <p>Looking for immediate assistance? Try these resources:</p>
+                            
+                            <a href="calculator.html" class="btn btn-outline mb-2" style="width: 100%;">Bra Size Calculator</a>
+                            <a href="blog.html" class="btn btn-outline mb-2" style="width: 100%;">Browse Our Guides</a>
+                            <a href="blog/category/bra-size-guide.html" class="btn btn-outline" style="width: 100%;">Size Guide Help</a>
+                        </div>
+                    </div>
+
+                    <div class="card mt-3">
+                        <div class="card-content">
+                            <h3>Common Questions</h3>
+                            <div style="margin-bottom: 1rem;">
+                                <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">How accurate is your calculator?</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">Our calculator provides a great starting point, but we always recommend trying bras on as sizes can vary between brands.</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 1rem;">
+                                <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you sell bras?</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">We don't sell bras directly, but we provide affiliate links to trusted retailers where you can purchase our recommended products.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">How often should I measure myself?</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">We recommend measuring every 6-12 months or after significant weight changes, pregnancy, or hormonal changes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-3">
+                        <div class="card-content">
+                            <h3>Response Time</h3>
+                            <p>We typically respond to inquiries within 24-48 hours during business days. For urgent bra fitting questions, check our comprehensive guides for immediate help.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Bra Fitting Questions</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <h4>What if my calculated size doesn't feel right?</h4>
+                            <p>Bra sizing can vary significantly between brands. Use our calculator as a starting point, then try different sizes and styles to find your perfect fit.</p>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <h4>Should I size up or down if I'm between sizes?</h4>
+                            <p>Generally, if you're between band sizes, go with the smaller size for better support. For cup sizes, choose based on comfort and coverage preferences.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Product & Reviews</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <h4>How do you choose which bras to review?</h4>
+                            <p>We review popular bras, new releases, and products requested by our community. We focus on brands available to our global audience.</p>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <h4>Are your reviews sponsored?</h4>
+                            <p>We clearly disclose any sponsored content. Most of our reviews are independent, and we always provide honest opinions regardless of partnerships.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GirlsBra Top</h3>
+                    <p>Empowering every woman to find her perfect fit. Your trusted source for bra guides, reviews, and expert advice.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="calculator.html">Bra Size Calculator</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="blog/category/bra-size-guide.html">Bra Size Guide</a></li>
+                        <li><a href="blog/category/best-bras-by-use.html">Best Bras by Use</a></li>
+                        <li><a href="blog/category/bra-reviews.html">Bra Reviews</a></li>
+                        <li><a href="blog/category/maternity-bras.html">Maternity Bras</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="disclaimer.html">Affiliate Disclaimer</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 GirlsBra Top. All rights reserved. | Empowering Every Woman to Find Her Perfect Fit.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+
