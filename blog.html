@@ -3,12 +3,27 @@ layout: default
 title: "All Articles"
 ---
 
-<h1>All Blog Posts</h1>
+<section class="hero">
+  <div class="container">
+    <h1>All Blog Posts</h1>
+    <p>Your ultimate resource for bra fitting, reviews, and advice.</p>
+  </div>
+</section>
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2">
+      {% for post in site.posts %}
+        <article class="card">
+          <div class="card-content">
+            <h3 class="card-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+            <p class="card-text">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+            <a href="{{ post.url | relative_url }}" class="btn btn-outline">Read More</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
