@@ -1,7 +1,30 @@
 ---
 layout: default
-title: "All Articles - GirlsBra Top Blog"
+title: "All Articles & Guides - GirlsBra Top"
 ---
+
+<style>
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-content .btn {
+    margin-top: auto;
+  }
+  .card-title a {
+    color: var(--text-primary);
+  }
+  .card-title a:hover {
+    color: var(--primary-color);
+  }
+</style>
+
 <section class="hero">
   <div class="container">
     <h1>All Articles & Guides</h1>
@@ -13,16 +36,18 @@ title: "All Articles - GirlsBra Top Blog"
   <div class="container">
     <div class="grid grid-2">
       {% for post in site.posts %}
-        <article class="card">
+        <article class="card post-card">
           {% if post.image %}
-            <a href="{{ post.url | relative_url }}"><img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="card-image"></a>
+            <a href="{{ post.url | relative_url }}">
+              <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="card-image">
+            </a>
           {% endif %}
           <div class="card-content">
             {% if post.category %}
               <span style="color: var(--primary-color); font-size: 0.9rem; font-weight: 500;">{{ post.category | upcase }}</span>
             {% endif %}
             <h3 class="card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            <p class="card-text">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+            <p class="card-text">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
             <a href="{{ post.url | relative_url }}" class="btn btn-outline">Read More</a>
           </div>
         </article>
