@@ -1,67 +1,41 @@
----
-layout: default
-title: "GirlsBra Top - Find Your Perfect Bra Fit | Bra Size Calculator & Reviews"
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: "GirlsBra Top" }}</title>
+    
+    <link rel="stylesheet" href="{{ "/css/style.css" | relative_url }}">
+    
+    <link rel="icon" type="image/x-icon" href="{{ "/favicon.ico" | relative_url }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo">
+                <a href="{{ "/" | relative_url }}">GirlsBra Top</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{{ "/" | relative_url }}" class="nav-link">Home</a></li>
+                <li><a href="{{ "/calculator.html" | relative_url }}" class="nav-link">Bra Size Calculator</a></li>
+                <li><a href="{{ "/blog.html" | relative_url }}" class="nav-link">Blog</a></li>
+                <li><a href="{{ "/about.html" | relative_url }}" class="nav-link">About</a></li>
+                <li><a href="{{ "/contact.html" | relative_url }}" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header class="header">
-    <nav class="navbar container">
-        <div class="logo">
-            <a href="/">GirlsBra Top</a>
+    <main>
+        {{ content }}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 GirlsBra Top. All rights reserved.</p>
+            </div>
         </div>
-        <ul class="nav-menu">
-            <li><a href="/" class="nav-link">Home</a></li>
-            <li><a href="/calculator.html" class="nav-link">Bra Size Calculator</a></li>
-            <li><a href="/blog.html" class="nav-link">Blog</a></li>
-            <li><a href="/about.html" class="nav-link">About</a></li>
-            <li><a href="/contact.html" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-<section class="hero">
-    <div class="container">
-        <h1>Find Your Perfect Bra Fit</h1>
-        <p>Empowering every woman to discover comfort, confidence, and the perfect fit with our expert guides and free bra size calculator.</p>
-        <a href="/calculator.html" class="btn btn-primary">Try Our Free Calculator</a>
-    </div>
-</section>
-
-<section class="section section-alt">
-    <div class="container">
-        <h2 class="section-title">Featured Bras - Editor's Choice</h2>
-        <div class="grid grid-3">
-             </div>
-    </div>
-</section>
-
-
-<section class="section">
-    <div class="container">
-        <h2 class="section-title">Latest Articles & Guides</h2>
-        <div class="grid grid-3">
-          {% for post in site.posts limit:3 %}
-            <article class="card">
-              {% if post.image %}
-                <a href="{{ post.url | relative_url }}"><img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="card-image"></a>
-              {% endif %}
-              <div class="card-content">
-                <h3 class="card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-                <p class="card-text">{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
-                <a href="{{ post.url | relative_url }}" class="btn btn-outline">Read More</a>
-              </div>
-            </article>
-          {% endfor %}
-        </div>
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="/blog.html" class="btn btn-secondary">View All Articles</a>
-        </div>
-    </div>
-</section>
-
-
-<footer class="footer">
-    <div class="container">
-        </div>
-</footer>
-
-<script src="/js/script.js"></script>
+    </footer>
+    <script src="{{ "/js/script.js" | relative_url }}"></script>
+</body>
+</html>
