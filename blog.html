@@ -2,19 +2,6 @@
 layout: default
 title: "All Articles - GirlsBra Top Blog"
 ---
-
-<style>
-  .post-card {
-    margin-bottom: 2rem;
-  }
-  .card-title a {
-    color: var(--text-primary);
-  }
-  .card-title a:hover {
-    color: var(--primary-color);
-  }
-</style>
-
 <section class="hero">
   <div class="container">
     <h1>All Articles & Guides</h1>
@@ -24,9 +11,9 @@ title: "All Articles - GirlsBra Top Blog"
 
 <section class="section">
   <div class="container">
-    <div id="posts-container" class="grid grid-2">
+    <div class="grid grid-2">
       {% for post in site.posts %}
-        <article class="card post-card">
+        <article class="card">
           {% if post.image %}
             <a href="{{ post.url | relative_url }}"><img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="card-image"></a>
           {% endif %}
