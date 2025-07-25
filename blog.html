@@ -2,6 +2,7 @@
 layout: default
 title: "All Articles - GirlsBra Top Blog"
 ---
+
 <style>
   .post-card {
     margin-bottom: 2rem;
@@ -24,7 +25,9 @@ title: "All Articles - GirlsBra Top Blog"
             <a href="{{ post.url | relative_url }}"><img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="card-image"></a>
           {% endif %}
           <div class="card-content">
-            <span style="color: var(--primary-color); font-size: 0.9rem; font-weight: 500;">{{ post.category | upcase }}</span>
+            {% if post.category %}
+              <span style="color: var(--primary-color); font-size: 0.9rem; font-weight: 500;">{{ post.category | upcase }}</span>
+            {% endif %}
             <h3 class="card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
             <p class="card-text">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
             <a href="{{ post.url | relative_url }}" class="btn btn-outline">Read More</a>
